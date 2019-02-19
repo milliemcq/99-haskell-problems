@@ -17,4 +17,11 @@ pyths n = [(x, y, z) | x <- [1..n], y <- [1..n], z <- [1..n], x^2 + y^2 == z^2]
 -- scalar product of two lists
 scalar xs ys = sum [x*y | (x, y) <- (zip xs ys)]
 
--- Function to merge two lists 
+-- Function to merge two lists
+merge (x:xs) (y:ys) = if x < y
+                        then x:(merge xs (y:ys))
+                        else y:(merge (x:xs) ys)
+merge [] xs = xs
+merge xs [] = xs
+
+-- Implement a mergesort
