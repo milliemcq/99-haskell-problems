@@ -25,3 +25,12 @@ merge [] xs = xs
 merge xs [] = xs
 
 -- Implement a mergesort
+mergesort'splitinhalf :: [a] -> ([a], [a])
+mergesort'splitinhalf xs = (take n xs, drop n xs)
+    where n = (length xs) `div` 2
+
+mergesort :: (Ord a) => [a] -> [a]
+mergesort xs
+    | (length xs) > 1 = merge (mergesort ls) (mergesort rs)
+    | otherwise = xs
+    where (ls, rs) = mergesort'splitinhalf xs

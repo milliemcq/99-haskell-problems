@@ -10,5 +10,10 @@ elementAt xs i = xs !! i
 -- P4 Find the number of elements in a list
 myLength xs = length xs
 
--- P5 Reverse a list/ reverse without using reverse 
+-- P5 Reverse a list/ reverse without using reverse
 myReverse xs = reverse xs
+
+myReverseWoReverse [] = []
+myReverseWoReverse (x:xs) = myReverseWoReverse xs ++ [x]
+
+--
