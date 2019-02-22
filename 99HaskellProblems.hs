@@ -16,4 +16,5 @@ myReverse xs = reverse xs
 myReverseWoReverse [] = []
 myReverseWoReverse (x:xs) = myReverseWoReverse xs ++ [x]
 
---
+-- P6 Find out whether a list is a palindrome
+isPalindrome xs = xs == reverse xs
