@@ -18,3 +18,6 @@ myReverseWoReverse (x:xs) = myReverseWoReverse xs ++ [x]
 
 -- P6 Find out whether a list is a palindrome
 isPalindrome xs = xs == reverse xs
+
+-- P7 Flatten a nested list structure
+myFlatten = 
