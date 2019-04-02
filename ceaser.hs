@@ -1,4 +1,14 @@
 import Data.Char
+
+-- Lowercase Converter
+lowers :: String -> Int
+lowers xs = length[x | x <- xs, x >= 'a' && x <= 'z']
+
+count :: Char -> String -> Int
+x xs = length[x' | x' <- xs, x == x']
+
+
+
 -- A ceaser cipher and decoder in Haskell
 
 let2int :: Char -> Int
@@ -21,3 +31,7 @@ table = [8.1, 1.5, 2.8, 4.2, 12.7, 2.2, 2.0, 6.1, 7.0,
 
 percent :: Int -> Int -> Float
 percent n m = (fromIntegral n / fromIntegral m) * 100
+
+freqs :: String -> [Float]
+freqs xs = [percent (count x xs) n | x <-['a'..'z']]
+              where n = lowers xs
