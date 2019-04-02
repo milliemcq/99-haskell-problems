@@ -5,7 +5,7 @@ lowers :: String -> Int
 lowers xs = length[x | x <- xs, x >= 'a' && x <= 'z']
 
 count :: Char -> String -> Int
-x xs = length[x' | x' <- xs, x == x']
+count x xs = length[x' | x' <- xs, x == x']
 
 
 
