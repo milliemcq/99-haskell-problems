@@ -7,4 +7,7 @@ third :: [a] -> a
 
 third xs = xs !! 2
 
--- 4.3: Safetail maps empty list to itself rather than error 
+-- 4.3: Safetail maps empty list to itself rather than error
+safetail :: [a] -> [a]
+safetail ([]:[]) = []
+safetail (_:xs) = xs
