@@ -11,3 +11,7 @@ third xs = xs !! 2
 safetail :: [a] -> [a]
 safetail ([]:[]) = []
 safetail (_:xs) = xs
+
+-- Ch 6 Recursion
+init (x:xs) | null xs = []
+            | otherwise =
