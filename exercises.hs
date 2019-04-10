@@ -9,7 +9,7 @@ third xs = xs !! 2
 
 -- 4.3: Safetail maps empty list to itself rather than error
 safetail :: [a] -> [a]
-safetail ([]:[]) = []
+safetail [] = []
 safetail (_:xs) = xs
 
 -- 4.4 Show how the disjunction operator || can be defined in 4 different ways using pattern matching
@@ -18,7 +18,13 @@ True || _ = True
 _ || _ = False
 
 -- 4.5 AND using nested conditions
+my_and :: Bool -> Bool -> Bool
+my_and x y = if x == True then (if y == True then True else False) else False
+
+-- 4.6 AND using nested conditions differently
+my_and_diff :: Bool -> Bool -> Bool
+my_and_diff x y = if x == True then y else False 
 
 -- Ch 6 Recursion
-init (x:xs) | null xs = []
-            | otherwise =
+{-init (x:xs) | null xs = []
+            | otherwise =-}
