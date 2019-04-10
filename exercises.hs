@@ -23,7 +23,18 @@ my_and x y = if x == True then (if y == True then True else False) else False
 
 -- 4.6 AND using nested conditions differently
 my_and_diff :: Bool -> Bool -> Bool
-my_and_diff x y = if x == True then y else False 
+my_and_diff x y = if x == True then y else False
+
+-- 4.7 show the meaning of curried function can be formalised in terms of lambda expressions
+{-
+mult :: Int -> Int -> Int -> Int
+mult x y z = x*y*z
+-}
+
+mult_lambda :: Int -> (Int -> (Int -> Int))
+mult_lamda = \x -> (\y -> y*(\z -> ))
+mult x y z = x*y*z
+
 
 -- Ch 6 Recursion
 {-init (x:xs) | null xs = []
