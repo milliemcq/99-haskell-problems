@@ -14,6 +14,10 @@ safetail (_:xs) = xs
 
 -- 4.4 Show how the disjunction operator || can be defined in 4 different ways using pattern matching
 (||) :: Bool -> Bool -> Bool
+True || _ = True
+_ || _ = False
+
+
 
 -- Ch 6 Recursion
 init (x:xs) | null xs = []
