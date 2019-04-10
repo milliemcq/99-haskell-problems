@@ -17,7 +17,7 @@ safetail (_:xs) = xs
 True || _ = True
 _ || _ = False
 
-
+-- 4.5 AND using nested conditions
 
 -- Ch 6 Recursion
 init (x:xs) | null xs = []
