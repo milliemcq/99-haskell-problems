@@ -40,7 +40,7 @@ luhnDouble x = if (x*2) > 9 then ((x*2) - 9) else (x*2)
 
 -- 4.9 Define a function luhn that decides if a 4 digit bank card number is valid
 luhn :: Int -> Int -> Int -> Int -> Bool
-luhn u x y z | (((luhnDouble u + luhnDouble x + luhnDouble y + luhnDouble z) `mod` 10) == 0) = True
+luhn u x y z | ((luhnDouble u) + (luhnDouble x) + (luhnDouble y) + (luhnDouble z)) `mod` 10 == 0 = True
              | otherwise = False
 
 
