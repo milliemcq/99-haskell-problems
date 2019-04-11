@@ -31,8 +31,12 @@ mult :: Int -> Int -> Int -> Int
 mult x y z = x*y*z
 -}
 
-mult_lambda :: Int -> (Int -> (Int -> Int))
-mult_lamda = (\x -> \y -> \z -> x*y*z)
+multLambda :: Int -> (Int -> (Int -> Int))
+multLambda = (\x -> \y -> \z -> x*y*z)
+
+-- 4.8 Define a function luhnDouble that doubles a digit and subtracts 9 if result is greater than 9
+luhnDouble :: Int -> Int
+luhnDouble x = if (x*2) > 9 then ((x*2) - 9) else (x*2)
 
 
 
