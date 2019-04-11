@@ -32,8 +32,8 @@ mult x y z = x*y*z
 -}
 
 mult_lambda :: Int -> (Int -> (Int -> Int))
-mult_lamda = \x -> (\y -> y*(\z -> ))
-mult x y z = x*y*z
+mult_lamda = (\x -> \y -> \z -> x*y*z)
+
 
 
 -- Ch 6 Recursion
