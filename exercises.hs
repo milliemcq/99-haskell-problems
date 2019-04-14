@@ -42,6 +42,7 @@ luhnDouble x = if (x*2) > 9 then ((x*2) - 9) else (x*2)
 luhn :: Int -> Int -> Int -> Int -> Bool
 luhn u x y z = if ((luhnDouble x + luhnDouble y + luhnDouble z) `mod` 10 == 0) then True else False
 
+-- 5.1 Give an expression that calculates the sum of 1^2 + 2^2 ... + 100^2 using list comprehension
 
 -- Ch 6 Recursion
 {-init (x:xs) | null xs = []
