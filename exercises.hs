@@ -43,8 +43,13 @@ luhn :: Int -> Int -> Int -> Int -> Bool
 luhn u x y z = if ((luhnDouble x + luhnDouble y + luhnDouble z) `mod` 10 == 0) then True else False
 
 -- 5.1 Give an expression that calculates the sum of 1^2 + 2^2 ... + 100^2 using list comprehension
--- calculateXSquare :: Int
 calculateXSquare = sum [x^2 | x <- [1..100]]
+
+-- 5.2 Define a function grid, that returns a coordinate grid of a given size
+grid m n = [(x, y) | x <- [0..m], y <- [0..n]]
+
+-- 5.3 Define a function square that returns a square coordinate grid
+square 
 
 
 -- Ch 6 Recursion
