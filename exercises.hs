@@ -43,8 +43,8 @@ luhn :: Int -> Int -> Int -> Int -> Bool
 luhn u x y z = if ((luhnDouble x + luhnDouble y + luhnDouble z) `mod` 10 == 0) then True else False
 
 -- 5.1 Give an expression that calculates the sum of 1^2 + 2^2 ... + 100^2 using list comprehension
-calculateXSquare :: Int
-calculateXSquare = [x^2 | x <- [1..100]]
+-- calculateXSquare :: Int
+calculateXSquare = sum [x^2 | x <- [1..100]]
 
 
 -- Ch 6 Recursion
