@@ -49,7 +49,7 @@ calculateXSquare = sum [x^2 | x <- [1..100]]
 grid m n = [(x, y) | x <- [0..m], y <- [0..n]]
 
 -- 5.3 Define a function square that returns a square coordinate grid
-square n = [(x,y) |(x,y) <- grid n n, x != y]
+square n = [(x,y) |(x,y) <- grid n n, x /= y]
 
 
 -- Ch 6 Recursion
