@@ -51,7 +51,8 @@ grid m n = [(x, y) | x <- [0..m], y <- [0..n]]
 -- 5.3 Define a function square that returns a square coordinate grid
 square n = [(x,y) |(x,y) <- grid n n, x /= y]
 
--- 5.4 
+-- 5.4 Replicate - Can produce library function of a list of identical elements using list comprehension
+replicate :: Int -> a -> [a]
 
 -- Ch 6 Recursion
 {-init (x:xs) | null xs = []
