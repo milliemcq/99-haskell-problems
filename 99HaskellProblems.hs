@@ -20,5 +20,6 @@ myReverseWoReverse (x:xs) = myReverseWoReverse xs ++ [x]
 isPalindrome xs = xs == reverse xs
 
 -- P7 Flatten a nested list structure
+data NestedList a = Elem a | List [NestedList a]
 myFlatten :: [a] -> [a]
-myFlatten xs = [x | ] 
+myFlatten xs = [myFlatten x | x <- xs]
