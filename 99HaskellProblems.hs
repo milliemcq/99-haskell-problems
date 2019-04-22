@@ -19,8 +19,11 @@ myReverseWoReverse (x:xs) = myReverseWoReverse xs ++ [x]
 -- P6 Find out whether a list is a palindrome
 isPalindrome xs = xs == reverse xs
 
--- P7 Flatten a nested list structure
-data NestedList a = Elem a | List [NestedList a]
-flatten :: NestedList a -> [a]
-flatten (Elem x) = [x]
-flatten (List x) = concatMap flatten x
+-- P7 Flatten a nested list structure - HARD
+-- data NestedList a = Elem a | List [NestedList a]
+-- flatten :: NestedList a -> [a]
+-- flatten (Elem x) = [x]
+-- flatten (List x) = concatMap flatten x
+
+-- P8 Eliminate consecutive duplicates of list elements
+elimDupes xs = sum [ x | x <- xs, y <- xs]
