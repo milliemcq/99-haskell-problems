@@ -26,7 +26,16 @@ isPalindrome xs = xs == reverse xs
 -- flatten (List x) = concatMap flatten x
 
 -- P8 Eliminate consecutive duplicates of list elements
+-- The @ symbol stands for AS, so it splits the tail into head and tail
+-- Enabling to use x and y as consequtive elements
 elimDupes (x:ys@(y:_))
     | x == y    = elimDupes ys
     | otherwise = x : elimDupes ys
 elimDupes ys = ys
+
+-- P9 Pack consecutive duplicates of list elements into sublists.
+-- If a list contains repeated elements they should be placed in separate sublists.
+packDupes (x:ys@(y:_))
+    | x == y = packDupes [x, y] : ys
+    | otherwise = x : packDupes ys
+packDupes ys = ys 
