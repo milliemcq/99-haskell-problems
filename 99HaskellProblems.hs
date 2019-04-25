@@ -26,4 +26,7 @@ isPalindrome xs = xs == reverse xs
 -- flatten (List x) = concatMap flatten x
 
 -- P8 Eliminate consecutive duplicates of list elements
-elimDupes xs = sum [ x | x <- xs, y <- xs]
+elimDupes (x:ys@(y:_))
+    | x == y    = elimDupes ys
+    | otherwise = x : elimDupes ys
+elimDupes ys = ys
