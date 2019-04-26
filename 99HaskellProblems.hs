@@ -54,4 +54,5 @@ myLast xs = head (reverse xs)
 myLastB xs = xs !! (length xs - 2)
 
 -- P3 Find Kth Element in a List
+elementAt [a] -> [Int] -> a
 elementAt xs k = xs !! k
