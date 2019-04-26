@@ -59,3 +59,7 @@ elemAt xs k = xs !! (k-1)
 -- P4 Find the number of elements in a list (without using length)
 lengthList [] = 0
 lengthList (_:xs) = 1 + lengthList xs
+
+-- P5 reverse a list
+newReverse [] = []
+newReverse (x:xs) = newReverse xs
