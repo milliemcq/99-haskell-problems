@@ -51,4 +51,4 @@ pack (x:xs) = (x:first) : pack rest
 myLast xs = head (reverse xs)
 
 -- P2 Find the last but on element of a list
-myLastB xs = xs !! (length xs - 1)
+myLastB xs = xs !! (length xs - 2)
