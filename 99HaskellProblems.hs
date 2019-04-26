@@ -35,7 +35,12 @@ elimDupes ys = ys
 
 -- P9 Pack consecutive duplicates of list elements into sublists.
 -- If a list contains repeated elements they should be placed in separate sublists.
-packDupes (x:ys@(y:_))
-    | x == y = packDupes [x, y] : ys
-    | otherwise = x : packDupes ys
-packDupes ys = ys 
+pack :: Eq a => [a] -> [[a]]
+pack [] = []
+pack (x:xs) = (x:first) : pack rest
+         where
+           getReps [] = ([], [])
+           getReps (y:ys)
+                   | y == x = let (f,r) = getReps ys in (y:f, r)
+                   | otherwise = ([], (y:ys))
+           (first,rest) = getReps xs
