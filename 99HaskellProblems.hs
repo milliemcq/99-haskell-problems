@@ -52,3 +52,6 @@ myLast xs = head (reverse xs)
 
 -- P2 Find the last but on element of a list
 myLastB xs = xs !! (length xs - 2)
+
+-- P3 Find Kth Element in a List
+elementAt xs k = xs !! k
