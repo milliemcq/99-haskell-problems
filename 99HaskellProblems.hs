@@ -62,4 +62,4 @@ lengthList (_:xs) = 1 + lengthList xs
 
 -- P5 reverse a list
 newReverse [] = []
-newReverse (x:xs) = newReverse xs
+newReverse (x:xs) = newReverse xs ++ [x]
