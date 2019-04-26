@@ -44,3 +44,11 @@ pack (x:xs) = (x:first) : pack rest
                    | y == x = let (f,r) = getReps ys in (y:f, r)
                    | otherwise = ([], (y:ys))
            (first,rest) = getReps xs
+
+-- RACE FROM THE TOP
+
+-- P1 Find the last element in a list
+myLast xs = head (reverse xs)
+
+-- P2 Find the last but on element of a list
+myLastB xs = xs !! (length xs - 1)
