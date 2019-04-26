@@ -54,5 +54,8 @@ myLast xs = head (reverse xs)
 myLastB xs = xs !! (length xs - 2)
 
 -- P3 Find Kth Element in a List
--- elemAt [a] -> [Int] -> a
 elemAt xs k = xs !! (k-1)
+
+-- P4 Find the number of elements in a list (without using length)
+lengthList [] = 0
+lengthList (_:xs) = 1 + lengthList xs
