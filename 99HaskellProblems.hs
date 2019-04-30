@@ -49,4 +49,4 @@ packHelper a (x:xs) =
 pack :: Eq a => [a] -> [[a]]
 pack = foldr packHelper []
 
-P1
+-- P10 Run-length encoding of a list
