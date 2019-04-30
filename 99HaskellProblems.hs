@@ -50,3 +50,5 @@ pack :: Eq a => [a] -> [[a]]
 pack = foldr packHelper []
 
 -- P10 Run-length encoding of a list
+encode :: Eq a => [a] -> [(Int, a)]
+encode = map (\xs -> (length xs, head xs)).pack
