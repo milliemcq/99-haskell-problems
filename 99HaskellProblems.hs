@@ -60,6 +60,14 @@ elemAt xs k = xs !! (k-1)
 lengthList [] = 0
 lengthList (_:xs) = 1 + lengthList xs
 
--- P5 reverse a list
+-- P5 Reverse a list
 newReverse [] = []
 newReverse (x:xs) = newReverse xs ++ [x]
+
+-- P6 Find out if a list is a isPalindrome
+isAPalindrome :: Eq a => [a] -> Bool
+isAPalindrome [] = True
+isAPalindrome [x] = True
+isAPalindrome ([x,y]) = x == y
+isAPalindrome (x:xs) =
+  (x == last xs) && isAPalindrome (init xs)
