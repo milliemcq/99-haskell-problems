@@ -1,18 +1,31 @@
 -- P1 Find the last element in a list
-lastElem xs = head (reverse xs)
+lastElem :: [a] -> a
+lastElem [] = error "empty list"
+lastElem [x] = x
+lastElem (_:xs) = last xs
 
 -- P2 Find the last bit one element in a list
-lastButOne xs = xs !! (length xs - 2)
+lastButOne :: [a] -> a
+lastButOne [] = error "empty list"
+lastButOne [_] = error "list too short"
+lastButOne (x:[_]) = x
+lastButOne (_:xs) = lastButOne xs
 
 -- P3 Find the Kth element of a list
-elementAt xs i = xs !! i
+elemAt :: Int -> [a] -> a
+elemAt _ [] = error "list too short"
+elemAt 1 (x:_) = x
+elemAt n (_:xs) = elemAt (n-1) xs
 
 -- P4 Find the number of elements in a list
-myLength xs = length xs
+totalElem :: [a] -> Int
+totalElem = foldr (\x -> (+)1) 0
+
 
 -- P5 Reverse a list/ reverse without using reverse
-newReverse [] = []
-newReverse (x:xs) = newReverse xs ++ [x]
+reverseList :: [a] -> [a]
+reverseList [] = []
+reverseList (x:xs) = reverseList xs ++ [x]
 
 -- P6 Find out whether a list is a palindrome
 palindrome :: Eq a => [a] -> Bool
