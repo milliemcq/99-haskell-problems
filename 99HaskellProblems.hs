@@ -2,7 +2,7 @@
 lastElem :: [a] -> a
 lastElem [] = error "empty list"
 lastElem [x] = x
-lastElem (_:xs) = last xs
+lastElem (_:xs) = lastElem xs
 
 -- P2 Find the last bit one element in a list
 lastButOne :: [a] -> a
