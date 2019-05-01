@@ -17,4 +17,4 @@ dwindle [] = []
 dwindle [x] = [x]
 dwindle (x:xs@(y:ys))
   | x == y    = [x] ++ dwindle xs
-  | otherwise   = [x, y] ++ dwindle xs
+  | otherwise   = [x, y] ++ dwindle ys
