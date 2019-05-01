@@ -16,5 +16,5 @@ dwindle :: Eq a => [a] -> [a]
 dwindle [] = []
 dwindle [x] = [x]
 dwindle (x:xs@(y:ys))
-  | x == y    = [x] ++ dwindle ys
+  | x == y    = dwindle ys
   | otherwise   = [x, y] ++ dwindle ys
