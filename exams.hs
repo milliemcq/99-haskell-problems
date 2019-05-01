@@ -10,3 +10,13 @@ my_append (x:xs) ys = x : my_append xs ys
 
 my_map f [] = []
 my_map f (x:xs) = f x : my_map f xs
+
+
+dwindle :: [a] -> [a]
+dwindle [] = []
+dwindle [x, y] =
+  | x == y = [x]
+  otherwise = [x, y]
+dwindle (x:xs@(y:ys)) =
+  | x == y = [x] ++ dwindle ys
+  otherwise = [x, y] ++ dwindle ys
