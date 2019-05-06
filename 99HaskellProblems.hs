@@ -65,3 +65,10 @@ pack = foldr packHelper []
 -- P10 Run-length encoding of a list
 encode :: Eq a => [a] -> [(Int, a)]
 encode = map (\xs -> (length xs, head xs)).pack
+
+-- P12 Undo run length encoding
+decodeModified :: [ListItem a] -> [a]
+decodeModified = concatMap decodeHelper
+    where
+      decodeHelper (Single x)     = [x]
+      decodeHelper (Multiple n x) = replicate n x
