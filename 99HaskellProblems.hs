@@ -1,4 +1,5 @@
 -- P1 Find the last element in a list
+-- Iterates over tail until only one element remains
 lastElem :: [a] -> a
 lastElem [] = error "empty list"
 lastElem [x] = x
