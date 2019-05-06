@@ -72,3 +72,33 @@ decodeModified = concatMap decodeHelper
     where
       decodeHelper (Single x)     = [x]
       decodeHelper (Multiple n x) = replicate n x
+
+-- P14 Duplicate the elements of a list
+dupli [] = []
+dupli (x:xs) = x:x:dupli xs
+
+-- P15 Replicate list elements a given number of times
+repli :: [a] -> Int -> [a]
+repli xs n = concatMap (replicate n) xs
+
+-- P16 Drop every Nth element of a list
+dropEvery :: [a] -> Int -> [a]
+dropEvery list count = helper list count count
+  where helper [] _ _ = []
+        helper (x:xs) count 1 = helper xs count count
+        helper (x:xs) count n = x : (helper xs count (n - 1))
+
+-- P17 Split a list into two parts, length of first part is given
+split :: [a] -> Int -> ([a], [a])
+split []         _             = ([], [])
+split l@(x : xs) n | n > 0     = (x : ys, zs)
+                   | otherwise = ([], l)
+    where (ys,zs) = split xs (n - 1)
+
+-- P18 extract a slice from a List
+slice :: [a] -> Int -> Int -> [a]
+slice [] _ _  = []
+slice (x:xs) i k
+ | i > 1      = slice xs (i - 1) (k - 1)
+ | k < 1      = []
+ | otherwise  = x:slice xs (i - 1) (k - 1)
