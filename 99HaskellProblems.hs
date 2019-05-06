@@ -6,6 +6,8 @@ lastElem [x] = x
 lastElem (_:xs) = lastElem xs
 
 -- P2 Find the last bit one element in a list
+-- Eliminate the head of the list until only a head and a tail
+-- with one element remains.
 lastButOne :: [a] -> a
 lastButOne [] = error "empty list"
 lastButOne [_] = error "list too short"
