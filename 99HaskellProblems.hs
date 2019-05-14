@@ -68,6 +68,7 @@ packHelper a (x:xs) =
 pack :: Eq a => [a] -> [[a]]
 pack = foldr packHelper []
 
+{-
 -- P10 Run-length encoding of a list
 encode :: Eq a => [a] -> [(Int, a)]
 encode = map (\xs -> (length xs, head xs)).pack
@@ -107,4 +108,4 @@ slice [] _ _  = []
 slice (x:xs) i k
  | i > 1      = slice xs (i - 1) (k - 1)
  | k < 1      = []
- | otherwise  = x:slice xs (i - 1) (k - 1)
+ | otherwise  = x:slice xs (i - 1) (k - 1)-}
