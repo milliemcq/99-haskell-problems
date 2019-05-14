@@ -1,4 +1,4 @@
--- P1 Find the last element in a list
+ -- P1 Find the last element in a list
 -- Iterates over tail until only one element remains
 lastElem :: [a] -> a
 lastElem [] = error "empty list"
@@ -15,6 +15,8 @@ lastButOne (x:[_]) = x
 lastButOne (_:xs) = lastButOne xs
 
 -- P3 Find the Kth element of a list
+-- Decrease the value of K until it is one over
+-- tail of list then choose the head
 elemAt :: Int -> [a] -> a
 elemAt _ [] = error "list too short"
 elemAt 1 (x:_) = x
@@ -43,7 +45,8 @@ data NestedList a = Elem a | List [NestedList a]
 
 flatten :: NestedList a -> [a]
 flatten (Elem a) = [a]
-flatten (List x) = foldr ((++).flatten) [] x
+flatten (List (x:xs)) = flatten x ++ flatten (List xs)
+flatten (List []) = []
 
 -- P8 Eliminate consecutive duplicates of list elements
 eliminate :: Eq a => [a] -> [a]
